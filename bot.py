@@ -84,7 +84,6 @@ async def get_confirm(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def get_source(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["source"] = update.message.text
 
-    # Final message with redirect button
     reply_markup = InlineKeyboardMarkup([
         [InlineKeyboardButton("🚀 Proceed to Participate Page", url="https://yourwebsite.com/participate.html")]
     ])
@@ -101,9 +100,9 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("🚫 Registration cancelled.")
     return ConversationHandler.END
 
-# Main function to run the bot
+# ✅ Main function to run the bot
 def main():
-    application = ApplicationBuilder().token("YOUR_BOT_TOKEN").build()
+    application = ApplicationBuilder().token("8007198236:AAEX_N-PZHSrD92lFRFbDXh2WLiNWtCVhXY").build()
 
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
